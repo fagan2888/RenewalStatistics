@@ -123,6 +123,7 @@ class Stats(object):
 
         return data_dict
 
+
 if __name__ == "__main__":
     renew = Stats()
     # value = renew.Renewable(month=6)
