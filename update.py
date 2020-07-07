@@ -105,5 +105,5 @@ def update(table_name):
 
 
 if __name__ == "__main__":
-    update("可续保清单")
+    # update("可续保清单")
     update("已续保清单")
