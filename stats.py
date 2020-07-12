@@ -2,7 +2,7 @@ import logging
 import sqlite3
 
 from functools import lru_cache
-from datetime import date, datetime
+from datetime import datetime
 from datetime import timedelta
 
 
@@ -152,7 +152,7 @@ class Stats(object):
         month = self.month
 
         first_date = f"{self.year}-{month:02}-01"
-        last_date = f"{self.year}-{(month+1):02}-01"
+        last_date = f"{self.year}-{(month+2):02}-01"
 
         sql_str = f"SELECT \
             [中心支公司].[中心支公司简称], \
@@ -188,8 +188,6 @@ class Stats(object):
 
         renewadle = self.month_renewable(month=month)
         renewed = self.month_renewed(month=month)
-
-
 
         data_dict = dict()
 
