@@ -135,6 +135,8 @@ class Excel_Write(object):
 
         self.nrow += 2
 
+        logging.info("表头写入完成")
+
     def write_data(self):
         """
         写入数据
@@ -182,45 +184,47 @@ class Excel_Write(object):
                 row=nrow,
                 col=ncol + 2,
                 number=three_month_renewable[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
                 col=ncol + 3,
                 number=three_month_renewed[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
                 col=ncol + 4,
                 number=three_last_month_renewable[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
                 col=ncol + 5,
                 number=three_last_month_renewed[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
-                col=ncol + 5,
+                col=ncol + 6,
                 number=three_day_renewed[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
-                col=ncol + 5,
+                col=ncol + 7,
                 number=three_app_day_renewed[key],
-                cell_format=self.style.number,
+                cell_format=self.style.number_0,
             )
             self.ws.write_number(
                 row=nrow,
-                col=ncol + 5,
+                col=ncol + 8,
                 number=three_renewal_rate[key],
-                cell_format=self.style.number,
+                cell_format=self.style.percent,
             )
             nrow += 1
+
+            logging.info("表数据写入完成")
 
     def make_form(self):
         """
