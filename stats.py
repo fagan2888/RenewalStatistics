@@ -584,7 +584,6 @@ class Stats(object):
         data_dict = dict()
 
         for key in renewadle:
-            print(key)
             data_dict[key] = renewed[key] / renewadle[key]
 
         return data_dict
